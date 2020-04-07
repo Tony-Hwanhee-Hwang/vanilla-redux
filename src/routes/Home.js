@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { actionCreator } from "../store";
 import ToDo from "../components/ToDo";
+import { Link } from "react-router-dom";
 
 function Home({ todos, addToDo }) {
 	const [todo, setTodo] = useState("");
@@ -22,7 +23,11 @@ function Home({ todos, addToDo }) {
 			</form>
 			<ul>
 				{todos.map((item) => {
-					return <ToDo {...item} key={item.id}></ToDo>;
+					return (
+						<Link to={`/${item.id}`} key={item.id}>
+							<ToDo {...item}></ToDo>
+						</Link>
+					);
 				})}
 			</ul>
 		</>
