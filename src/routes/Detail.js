@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { actionCreator } from "../store";
 
 function Detail({ toDos }) {
 	return (
@@ -12,8 +11,6 @@ function Detail({ toDos }) {
 }
 
 function mapStateToProps(state, mapProps) {
-	console.log(1, state);
-	console.log(2, mapProps);
 	const {
 		match: {
 			params: { id },
